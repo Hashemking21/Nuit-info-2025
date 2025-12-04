@@ -1,4 +1,69 @@
 export const frame = [
+  {
+index: 5,
+imgUrl: img5,
+text: " ",//explication apple
+cmdList:["cd chemin", "ls"],
+etatPlanete:"img planete",
+etatPrison:"img prison",
+etatSurveillance:"img surveillance",
+horribleInput: false
+
+},
+
+
+{
+index: 6,
+imgUrl:" ",
+text:" ",//exp appl 2
+cmd:[ "cd chemin","ls"],
+etatPlanete:"img planete",
+etatPrison:"img prison",
+etatSurveillance:"img surveillance",
+horribleInput: false
+},
+
+{
+index: 7,
+imgUrl:" ",
+text:" ",//enigme appl
+cmd:[ "ls"],
+etatPlanete:"img planete",
+etatPrison:"img prison",
+etatSurveillance:"img surveillance",
+horribleInput: true
+},
+
+{
+index: 8,
+imgUrl:" ",
+text:" ",//garde NON
+cmd:[ "rm iGuardPRoMAx","ls"],
+etatPlanete:"img planete",
+etatPrison:"img prison",
+etatSurveillance:"img surveillance",
+horribleInput: false
+},
+{
+index: 9,
+imgUrl:" ",
+text:" ",//a pu garde
+cmd:[ "cd route","ls"],
+etatPlanete:"img planete",
+etatPrison:"img prison",
+etatSurveillance:"img surveillance",
+horribleInput: false
+},
+{
+index: 10,
+imgUrl:" ",
+text:" ",//histoire GPT
+cmd:[ "cd route","ls"],
+etatPlanete:"img planete",
+etatPrison:"img prison",
+etatSurveillance:"img surveillance",
+horribleInput: false
+},
     {
         index:11,
         imgUrl:"",
@@ -8,7 +73,7 @@ export const frame = [
         etatPrison:0,
         etatSurveillance:0,
         horribleInput:false
-        
+
     },{
         index:12,
         imgUrl:"",
@@ -73,4 +138,9 @@ export const frame = [
         etatSurveillance:0,
         horribleInput:false
     }
+
+
+
+
+
 ]
