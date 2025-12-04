@@ -1,5 +1,21 @@
-<script setup lang="js"></script>
+<script setup lang="js">
+//import { ref } from 'vue'
+import Terminal from '../components/Terminal.vue'
+import TextDisplay from '../components/TextDisplay.vue'
 
-<template></template>
+function onCommand(cmd) {
+  currentText.value = cmd //  on remplace le contenu de la carte
+}
+</script>
+
+<template>
+  <main>
+    <h2>Page Game</h2>
+
+    <TextDisplay />
+
+    <Terminal />
+  </main>
+</template>
 
 <style scoped></style>
