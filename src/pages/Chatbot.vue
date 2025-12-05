@@ -1,7 +1,10 @@
 <script setup lang="js">
 import { ref, nextTick, onMounted, watch } from 'vue';
+import { useRouter } from 'vue-router';
 import { useSounds } from '../composables/useSounds';
 import WelcomeModal from '../components/WelcomeModal.vue';
+
+const router = useRouter();
 
 const messages = ref([]);
 const newMessage = ref('');
@@ -258,12 +261,15 @@ const onSlothClick = () => {
         <div class="right-chatbot flex w-full lg:w-auto justify-center">
             <div class="chatbot-container poppins-regular bg-white w-full lg:w-[1000px] h-[600px] lg:h-[735px] rounded-2xl flex flex-col">
                 <div class="chatbot-header flex items-center justify-between p-4 border-b">
-                    <button class="menu-btn p-2">
+                    <button
+                        @click="router.push('/')"
+                        class="menu-btn p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        title="Retour à l'accueil">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
+                        
                     </button>
                     <div class="flex items-center gap-2">
                         <img src="../assets/images/paw.png" class="w-8 h-8" alt="Morphée">
