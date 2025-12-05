@@ -1,0 +1,369 @@
+/* 1. Use a more intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+  height: 100%;
+}
+
+/* 4. Add accessible line-height & improve text rendering */
+body {
+  
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 9. Optional: Simple Root Variables for consistency */
+:root {
+  --font-body: system-ui, -apple-system, sans-serif;
+  --font-heading: system-ui, -apple-system, sans-serif;
+  --color-dark: #222;
+  --color-light: #f4f4f4;
+  --spacing-base: 1rem;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+}
+
+main {
+  min-height: 100vh;
+  /* Modification pour le responsive : hauteur auto pour permettre le scroll sur mobile */
+  height: auto;
+  background-image: url('../assets/images/bg_chat.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Fixer le background pour qu'il ne bouge pas au scroll */
+  background-attachment: fixed;
+}
+
+.custom-card{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-card:hover::before {
+  opacity: 1;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* État par défaut - avec animation de respiration douce */
+.custom-card.sloth-default {
+  background-image: url('../assets/images/sleep.webp');
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* États d'interaction */
+.custom-card.sloth-reflechis {
+  background-image: url('../assets/images/réfléchis.webp');
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.custom-card.sloth-reponse {
+  background-image: url('../assets/images/reponse_trouvee.webp');
+  animation: glow 1s ease-in-out;
+  box-shadow: 0 0 30px rgba(139, 111, 71, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card.sloth-surpris {
+  background-image: url('../assets/images/surpris.webp');
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.95;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 111, 71, 0.8), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(139, 111, 71, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+  75% {
+    transform: translateX(10px) rotate(2deg);
+  }
+}
+
+/* Chatbot Styles */
+.chatbot-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-header {
+  background-color: #ffffff;
+}
+
+.menu-btn {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.menu-btn:hover {
+  opacity: 0.7;
+}
+
+.audio-btn {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.audio-btn:hover {
+  transform: scale(1.1);
+}
+
+.audio-btn:active {
+  transform: scale(0.9);
+}
+
+.audio-btn svg {
+  color: #8B6F47;
+}
+
+.messages-area {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.messages-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-area::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+.messages-area::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.messages-area::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Message Bubbles */
+.user-message {
+  background-color: #8B6F47 !important;
+  color: white !important;
+  border-bottom-right-radius: 4px !important;
+  animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bot-message {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border-bottom-left-radius: 4px !important;
+  animation: slideInLeft 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.message-bubble {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  background-color: #f3f4f6;
+  border-radius: 18px;
+  width: fit-content;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #8B6F47;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Input Area */
+.input-area input {
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.input-area input:focus {
+  border-color: #8B6F47;
+  box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.1), 0 0 20px rgba(139, 111, 71, 0.1);
+  transform: translateY(-2px);
+}
+
+.input-area input::placeholder {
+  transition: all 0.3s ease;
+}
+
+.input-area input:focus::placeholder {
+  transform: translateX(5px);
+  opacity: 0.5;
+}
+
+.send-btn {
+  background-color: #8B6F47;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.send-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.send-btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.send-btn:hover {
+  background-color: #6d5637;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(139, 111, 71, 0.4);
+}
+
+.send-btn:active {
+  transform: scale(0.9) rotate(-5deg);
+  box-shadow: 0 2px 5px rgba(139, 111, 71, 0.4);
+}

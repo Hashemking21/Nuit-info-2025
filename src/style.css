@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+@import './assets/fonts/BENI/stylesheet.css';
+@import './assets/fonts/Poppins/stylesheet.css';
+
+
+.beni-black {
+  font-family: 'Beni', sans-serif;
+  font-weight: 900; /* Pour utiliser Beni Black */
+}
+
+.beni-regular{
+  font-family: 'Beni', sans-serif;
+  font-weight: 400; /* Pour utiliser Beni Regular */
+}
+
+.beni-light{
+  font-family: 'Beni', sans-serif;
+  font-weight: 300; /* Pour utiliser Beni Light */
+}
+
+/* Classes Poppins */
+.poppins-thin {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+}
+
+.poppins-extralight {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+
+.poppins-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.poppins-extrabold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+.poppins-black {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+}
