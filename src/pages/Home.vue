@@ -28,7 +28,9 @@ import Card from '../components/Card.vue';
         title="Inclusion"
         text="Accès équitable au numérique, réduction de la fracture numérique…"
         image="\src\imgLDPage\inclusion.avif"
-        color="#E8F8FF" />
+        color="#ffffff"
+        bgTextColor="#b9ff66"
+         />
 
       <Card
         title="Responsabilité"
@@ -39,7 +41,8 @@ import Card from '../components/Card.vue';
         title="Durabilité"
         text="Lutte contre l’obsolescence programmée par le choix de Linux pour l’équipement, maîtrise des coûts…"
         image="\src\imgLDPage/durability.avif"
-        color="#191A23" />
+        color="#191A23"
+        textColor="#ffffff"/>
     </div>
 
     <!-- ===================== FOOTER ===================== -->
