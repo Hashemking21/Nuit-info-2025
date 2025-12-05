@@ -4,8 +4,8 @@ import Card from '../components/Card.vue';
 
 <template>
 <div id="navbar">
-        <img src="" alt="">
-        <h1></h1>
+        <img src="\src\imgLDPage\Tux-pixelated.avif" alt="">
+        <h1>NIRD QUEST</h1>
     </div>
     <div id="about-us">
         <div id="text">
@@ -16,10 +16,10 @@ import Card from '../components/Card.vue';
             </router-link>
         </div>
         <div id="img">
-            <img src="" alt="">
+            <img src="\src\imgLDPage\NIRD-logo.avif" alt="">
         </div>
     </div>
-    <h2>Les 3 pilliers de notre démarche</h2>
+    <h2 id="piliers" >Les 3 pilliers de notre démarche</h2>
 
     <div id="piliersSection">
 
@@ -50,20 +50,12 @@ import Card from '../components/Card.vue';
   <div class="footer-container">
 
     <!-- Logo + Nom -->
-    <div class="footer-left">
-      <img src="" alt="Logo" class="footer-logo" />
+    <div id="footer-left">
+      <img src="\src\imgLDPage\Tux-pixelated.avif" alt="Logo"  />
       <h2>NIRD QUEST</h2>
-
-      <h3 class="contact-title">Contact us:</h3>
-
-      <p>Email: info@positivus.com</p>
-      <p>Phone: 555-567-8901</p>
-      <p>
-        Address: 1234 Main St<br />
-        Moonstone City, Stardust State 12345
-      </p>
     </div>
 
+    
     <!-- Menu -->
     <div class="footer-center">
       <a href="#">About us</a>
@@ -96,6 +88,37 @@ import Card from '../components/Card.vue';
 </template>
 
 <style scoped>
+#navbar ,#footer-left  {
+  max-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+  }
+
+  #navbar img , #footer-left img {
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+    }
+
+
+    #about-us {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 50px;
+
+    }
+  #piliers {
+      background: #b0ff67; 
+      border-radius: 5px; 
+      padding: 5px;
+      justify-self: center;
+      width: fit-content;
+      margin-top: 50px;
+    }
+
   #piliersSection {
     display: flex;
     flex-wrap: wrap;
@@ -130,6 +153,11 @@ import Card from '../components/Card.vue';
 
 .footer-left {
   max-width: 300px;
+}
+
+.footer-left :first-child {
+  height: min-content;
+
 }
 
 .footer-logo {
