@@ -1,3 +1,16 @@
+<script setup>
+/*
+      Ce composant reçoit UNE SEULE chose :
+        - text : une chaîne de caractères à afficher
+    */
+const props = defineProps({
+  text: {
+    type: String,
+    default: '',
+  },
+})
+</script>
+
 <template>
   <div class="text-display">
     <!-- Si on a du texte -->
@@ -9,19 +22,6 @@
     <p v-else class="empty">Aucun texte à afficher.</p>
   </div>
 </template>
-
-<script setup>
-/*
-  Ce composant reçoit UNE SEULE chose :
-    - text : une chaîne de caractères à afficher
-*/
-const props = defineProps({
-  text: {
-    type: String,
-    default: '',
-  },
-})
-</script>
 
 <style scoped>
 .text-display {

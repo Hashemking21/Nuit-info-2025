@@ -20,9 +20,7 @@ function sendCommand() {
 
 onMounted(() => {
   // autofocus sur l'input pour taper direct
-  if (inputEl.value) {
-    inputEl.value.focus()
-  }
+  focusInput()
 })
 
 function focusInput() {

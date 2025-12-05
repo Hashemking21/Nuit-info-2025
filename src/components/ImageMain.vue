@@ -1,27 +1,32 @@
 <script setup lang="js">
-import { computed } from 'vue';
-
+import { computed } from 'vue'
 
 const { name } = defineProps({
-  name :{
+  name: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const url = computed(() => {
   return `../../public/imgStep/${name}.avif`
 })
-
 </script>
 
 <template>
-<img :src="url" alt="step illustration">
+  <div class="image-wrapper">
+    <img :src="url" alt="step illustration" />
+  </div>
 </template>
 
 <style scoped>
- img {
-  width: 200px;
+.image-wrapper {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+img {
+  width: 70%;
   aspect-ratio: 1;
- }
+}
 </style>
