@@ -1,27 +1,34 @@
 <script setup lang="js">
-import { computed } from 'vue';
-
+import { computed } from 'vue'
 
 const { name } = defineProps({
-  name :{
+  name: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const url = computed(() => {
-  return `../../public/imgStep/${name}.avif`
+  return `../../src/assets/imgStep/${name}.avif`
 })
-
 </script>
 
 <template>
-<img :src="url" alt="step illustration">
+  <div class="image-wrapper">
+    <img :src="url" alt="step illustration" />
+  </div>
 </template>
 
 <style scoped>
- img {
-  width: 200px;
+.image-wrapper {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+img {
+  width: 70%;
   aspect-ratio: 1;
- }
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* ombre pour l’effet carte */
+}
 </style>
