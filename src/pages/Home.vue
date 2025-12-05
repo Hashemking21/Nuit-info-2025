@@ -55,7 +55,7 @@ import Card from '../components/Card.vue';
       <h2>NIRD QUEST</h2>
     </div>
 
-    
+
     <!-- Menu -->
     <div class="footer-center">
       <a href="#">About us</a>
@@ -94,7 +94,8 @@ import Card from '../components/Card.vue';
   align-items: center;
   justify-content: center;
   margin-bottom: 70px;
-  }
+}
+
 
   #navbar img , #footer-left img {
     height: 50px;
@@ -108,11 +109,24 @@ import Card from '../components/Card.vue';
       justify-content: space-around;
       align-items: center;
       margin-bottom: 50px;
-
+      justify-content: space-evenly;
     }
+
+    #text {
+      width: 47%;
+    }
+
+    #img {
+      width: 47%;
+    }
+
+    #img img {
+      object-fit: contain;
+    }
+
   #piliers {
-      background: #b0ff67; 
-      border-radius: 5px; 
+      background: #b0ff67;
+      border-radius: 5px;
       padding: 5px;
       justify-self: center;
       width: fit-content;
