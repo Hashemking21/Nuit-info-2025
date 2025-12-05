@@ -32,8 +32,8 @@ const props = defineProps({
 <template>
   <div id="card" :style="{ background: props.color }">
     <div>
-      <h2>{{ props.title }}</h2>
-      <p :style="{background:props.color,color:props.textColor}">{{ props.text }}</p>
+      <h2 :style="{background:props.color}">{{ props.title }}</h2>
+      <p :style="{color:props.textColor}">{{ props.text }}</p>
     </div>
     <div>
       <img :src="props.image" alt="" />
