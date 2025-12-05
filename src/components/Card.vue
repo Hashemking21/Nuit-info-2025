@@ -66,6 +66,8 @@ const props = defineProps({
 }
 
 #text > h2 {
+  border-radius: 5px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
