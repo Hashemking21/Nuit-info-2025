@@ -1,146 +1,159 @@
 export const frame = [
-  {
-index: 5,
-imgUrl: img5,
-text: " ",//explication apple
+{
+index:0,
+img:"etape6",
+text:"Tux : \nBravo, tu as réussi à t'échapper de la simulation de Windows ! Je suis Tux, enchanté, je me bats depuis des dizaines d'années contre l'oppression. Viens avec moi, j'ai de grands espoirs pour toi ! \nVous pouvez aller vers : \n[chemin]",
+cmdList:["cd chemin","ls"],
+etatPlanete:"",
+etatPrison:99,
+etatSurveillance:0,
+horribleInput:false
+},{
+index:1,
+img:"etape7",
+text:"Tux : \nCe que tu vois sur ta droite, ce sont les indicateurs de l'état de la planète. Comme tu peux le voir, tu as réussi à rétablir la liberté dans le monde. Windows te montre un monde faussement magnifique rempli de belles collines vertes et de ciel bleu. Il reste encore plusieurs ennemis à vaincre pour réhabiliter le monde, suis-moi. \nVous pouvez aller vers : \n[chemin]",
+cmdList:["cd chemin","ls"],
+etatPlanete:"",
+etatPrison:99,
+etatSurveillance:0,
+horribleInput:false
+},{
+index:2,
+img:"etape8",
+text:"Un cookie équipé d'un bandeau et d'un canif sort des fourrés. Cookie : Ah ! Je connais tout de toi, ton nom, ton adresse, TOUT !\nTux : Attention ! Vite, supprime-le avec la commande 'rm' puis son nom !",
+cmdList:["rm cookie"],
+etatPlanete:"",
+etatPrison:99,
+etatSurveillance:0,
+horribleInput:false
+},{
+index:3,
+img:"etape9",
+text:"Le cookie à disparu.\nTux :\nBravo ! tu l'as eu. Ne t'en fait pas la ville n'est plus très loin, viens !\nVous pouvez aller vers : \n[chemin]",
+cmdList:["cd chemin","ls"],
+etatPlanete:"",
+etatPrison:99,
+etatSurveillance:0,
+horribleInput:false
+},
+{
+index: 4,
+imgUrl: "etape9",
+text: "Tux : \nAller, suis-moi, on va rejoindre la capitale. C'est ici que se trouvent tes prochains adversaires. D'abord, tu devras libérer la ville de l'extrême surveillance de IGuardProMax. Il assure la sécurité, certes, mais à un trop grand prix. On ne peut plus rien faire sans son accord. On n'est même pas maître de notre environnement. Regarde ! On arrive. \nVous pouvez aller vers : \n[chemin]",//explication apple
 cmdList:["cd chemin", "ls"],
 etatPlanete:"img planete",
-etatPrison:"img prison",
-etatSurveillance:"img surveillance",
-horribleInput: false
-
-},
-
-
-{
-index: 6,
-imgUrl:" ",
-text:" ",//exp appl 2
-cmd:[ "cd chemin","ls"],
-etatPlanete:"img planete",
-etatPrison:"img prison",
-etatSurveillance:"img surveillance",
+etatPrison:99,
+etatSurveillance:0,
 horribleInput: false
 },
-
 {
-index: 7,
-imgUrl:" ",
-text:" ",//enigme appl
-cmd:[ "ls"],
+index: 5,
+imgUrl:"etape10",
+text:"Tux : \n le voilà, IGuardProMax, tu doit réussir à le battre. T'inquiéte pas je serais juste derrière toi au cas où.\nVous pouvez aller vers : \n[ville]",//enigme appl
+cmd:["cd ville","ls"],
 etatPlanete:"img planete",
-etatPrison:"img prison",
-etatSurveillance:"img surveillance",
+etatPrison:99,
+etatSurveillance:0,
 horribleInput: true
 },
-
+{
+index: 6,
+imgUrl:"etape10",
+text:"IGuardProMax : \n Halte ! Pour entrer comme pour sortir, tu devras résoudre mon énigme ! La voici : Je suis le fruit interdit, prononce-moi dans la langue de Steve Jobs et la voie s'ouvrira.",//enigme appl
+cmd:[ "ls"],
+etatPlanete:"img planete",
+etatPrison:99,
+etatSurveillance:0,
+horribleInput: true
+},
+{
+index: 7,
+imgUrl:"etape10",
+text:"IGuardProxMax : \n Bravo, tu as réussi !\n ... \n Ah, tu veux entrer ? Ok mais non, tu me sembles dangereux. Aller, hors de ma vue. Tu es là.\nTux :\n Rappelle-toi de ton affrontement avec le cookie !",//garde NON
+cmd:[ "rm IGuardProMax","ls"],
+etatPlanete:"img planete",
+etatPrison:99,
+etatSurveillance:0,
+horribleInput: false
+},
 {
 index: 8,
-imgUrl:" ",
-text:" ",//garde NON
-cmd:[ "rm iGuardPRoMAx","ls"],
+imgUrl:"etape11",
+text:"Le IGuardProMax à disparu. La voie est libre.\nVous pouvez aller vers : \n[route]",//a pu garde
+cmd:[ "cd route","ls"],
 etatPlanete:"img planete",
-etatPrison:"img prison",
-etatSurveillance:"img surveillance",
+etatPrison:0,
+etatSurveillance:0,
 horribleInput: false
 },
 {
 index: 9,
-imgUrl:" ",
-text:" ",//a pu garde
-cmd:[ "cd route","ls"],
+imgUrl:"etape12",
+text:"Tux :\nBravo, ce n'était pas facile mais tu as réussi ! Bon, ça ne va pas se simplifier, tu vas devoir te battre contre un dieu artificiel de la réponse. Cet ordinateur peut répondre à toutes les questions, il connaît tout sur tout mieux que tout le monde. Mais son impact sur l'environnement est catastrophique. Il se trouve là-bas dans l'immense tour de l'intelligence là-bas.\nVous pouvez aller vers : \n[tour]",//histoire GPT
+cmd:[ "cd tour","ls"],
 etatPlanete:"img planete",
-etatPrison:"img prison",
-etatSurveillance:"img surveillance",
+etatPrison:0,
+etatSurveillance:0,
 horribleInput: false
 },
 {
-index: 10,
-imgUrl:" ",
-text:" ",//histoire GPT
-cmd:[ "cd route","ls"],
-etatPlanete:"img planete",
-etatPrison:"img prison",
-etatSurveillance:"img surveillance",
-horribleInput: false
+index:10,
+imgUrl:"etape14",
+text:"Gépété :\nBienvenue dans ma tour. Pose-moi tes questions et j'illuminerai ta lanterne.",
+cmd:["ls"],
+etatPlanete:"",
+etatPrison:0,
+etatSurveillance:0,
+horribleInput:false
 },
-    {
-        index:11,
-        imgUrl:"",
-        text:"",
-        cmd:["ls", "cd tour"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-
-    },{
-        index:12,
-        imgUrl:"",
-        text:"",
-        cmd:["ls"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    },{
-        index:13,
-        imgUrl:"",
-        text:"",
-        cmd:["ls", "ls -a"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    },{
-        index:14,
-        imgUrl:"",
-        text:"",
-        cmd:["ls","cd prise"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    },{
-        index:15,
-        imgUrl:"",
-        text:"",
-        cmd:["ls","rm prise"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    },{
-        index:16,
-        imgUrl:"",
-        text:"",
-        cmd:["ls","sudo rm prise"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    },{
-        index:17,
-        imgUrl:"",
-        text:"",
-        cmd:["ls","cd sortie"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    },{
-        index:18,
-        imgUrl:"",
-        text:"",
-        cmd:["ls","cd fin"],
-        etatPlanete:"",
-        etatPrison:0,
-        etatSurveillance:0,
-        horribleInput:false
-    }
-
-
-
-
-
+{
+index:11,
+imgUrl:"etape15",
+text:"Tux :\nAttends ! Tu ne trouves pas qu'il fait chaud là ?\nHein !? Regarde la température de la terre ! Vite, il faut l'arrêter, trouve quelque chose vite ! Pour chercher des objets cachés, utilise ls -a !",
+cmd:["ls", "ls -a"],
+etatPlanete:"",
+etatPrison:0,
+etatSurveillance:0,
+horribleInput:false
+},
+{
+index:12,
+imgUrl:"etape16",
+text:"Tux :\nLà, une prise, vite débranche-la !\nVous pouvez aller vers : \n[prise]",
+cmd:["ls","cd prise"],
+etatPlanete:"",
+etatPrison:0,
+etatSurveillance:0,
+horribleInput:false
+},
+{
+index:13,
+imgUrl:"etape16",
+text:"Tux :\nAller, supprime-la vite !",
+cmd:["ls","rm prise"],
+etatPlanete:"",
+etatPrison:0,
+etatSurveillance:0,
+horribleInput:false
+},
+{
+index:14,
+imgUrl:"etape16",
+text:"Tux :\nLa prise ne peut pas être supprimée.\nTux : Non ! Gépété a dû la protéger. Tu peux utiliser la commande 'sudo rm' puis le nom de l'objet pour supprimer l'objet malgré ses protections.",
+cmd:["ls","sudo rm prise"],
+etatPlanete:"",
+etatPrison:0,
+etatSurveillance:0,
+horribleInput:false
+},
+{
+index:15,
+imgUrl:"etape17",
+text:"Tux :\nBravo ! Tu as réussi ! Le monde est sain et sauf. Tout devrait revenir à la normale bientôt. Mille mercis à toi !\nVous pouvez aller vers : \n[fin]",
+cmd:["ls","cd fin"],
+etatPlanete:"",
+etatPrison:0,
+etatSurveillance:0,
+horribleInput:false
+}
 ]
