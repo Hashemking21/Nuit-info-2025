@@ -4,7 +4,7 @@ import { frames } from '@/assets/data/frames.js'
 
 export const useGameStepsStore = defineStore('game-steps', () => {
   const step = ref(0);
-  const lsDone = ref(false);
+  const lsDone = ref(true);
 
   const filledStep = computed(() => {
     const stepObj = JSON.parse(JSON.stringify(frames.find(obj => obj.index === step.value)));
@@ -22,9 +22,21 @@ export const useGameStepsStore = defineStore('game-steps', () => {
   }
 
   function nextStep() {
+    console.log('next')
     step.value++;
     lsDone.value = false;
   }
 
-  return { step, filledStep, lsDone, enableLsDone, nextStep };
+  function nextStepWhitoutLs(){
+    step.value++;
+    lsDone.value = true;
+  }
+
+  function setPilluleRouge() {
+    console.log('pillule rouge')
+    step.value = 99;
+    lsDone.value = true;
+  }
+
+  return { step, filledStep, lsDone, enableLsDone, nextStep, nextStepWhitoutLs, setPilluleRouge };
 });

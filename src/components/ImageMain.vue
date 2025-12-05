@@ -15,7 +15,7 @@ const url = computed(() => {
 
 <template>
   <div class="image-wrapper">
-    <img :src="url" alt="step illustration" />
+    <img :src="url" alt="faire ls" />
   </div>
 </template>
 
