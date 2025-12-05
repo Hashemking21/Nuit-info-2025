@@ -1,1 +1,0 @@
-import{_ as e}from"./index-B2MWr6Tw.js";const t={};function o(r,s){return null}const c=e(t,[["render",o],["__file","/home/hashem/Nuit-Info-2025/NIRD-Quest/src/pages/Chatbot.vue"]]);export{c as default};
