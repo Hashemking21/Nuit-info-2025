@@ -1,3 +1,37 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const currentCommand = ref('')
+const history = ref([])
+
+const inputEl = ref(null)
+
+const emit = defineEmits(['command'])
+
+function sendCommand() {
+  const cmd = currentCommand.value.trim()
+  if (!cmd) return
+
+  // on ajoute à l'historique
+  history.value.push(cmd)
+  emit('command', cmd)
+  currentCommand.value = ''
+}
+
+onMounted(() => {
+  // autofocus sur l'input pour taper direct
+  if (inputEl.value) {
+    inputEl.value.focus()
+  }
+})
+
+function focusInput() {
+  if (inputEl.value) {
+    inputEl.value.focus()
+  }
+}
+</script>
+
 <template>
   <div class="terminal" @click="focusInput">
     <!-- Historique -->
@@ -22,62 +56,17 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const currentCommand = ref('')
-const history = ref([])
-
-const inputEl = ref(null)
-
-//const emit = defineEmits(['command'])
-
-function sendCommand() {
-  const cmd = currentCommand.value.trim()
-  if (!cmd) return
-
-  // on ajoute à l'historique
-  history.value.push(cmd)
-
-  // ici tu pourras aussi émettre vers le parent si tu veux :
-  //emit('command', cmd)
-
-  console.log('Commande tapée :', cmd)
-
-  currentCommand.value = ''
-}
-
-onMounted(() => {
-  // autofocus sur l'input pour taper direct
-  if (inputEl.value) {
-    inputEl.value.focus()
-  }
-})
-
-function focusInput() {
-  if (inputEl.value) {
-    inputEl.value.focus()
-  }
-}
-</script>
-
 <style scoped>
 .terminal {
   background: #000;
   color: #fff;
-  padding: 8px;
   font-family: monospace;
   min-height: 200px;
-  width: 50%;
+  width: 80%;
 
   max-height: 450px;
   overflow-y: scroll;
 
-  position: fixed;
-  bottom: 20px; /* distance depuis le bas */
-  left: 0;
-
-  border: 1px solid #0f0; /* léger contour pour le style */
   border-radius: 8px; /* arrondi des coins */
 }
 
