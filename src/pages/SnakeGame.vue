@@ -35,7 +35,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const boardSize = 400; // Taille du canvas en pixels
 const gridSize = 20;   // Taille d'une case (serpent et pomme)
 const tileCount = boardSize / gridSize; // Nombre de cases par ligne/colonne
-const speed = 100;     // Vitesse du jeu en ms (plus bas = plus vite)
+const speed = 150;     // Vitesse du jeu en ms (plus bas = plus vite)
 
 // --- État Réactif ---
 const gameCanvas = ref(null);
@@ -212,6 +212,7 @@ const handleKeydown = (e) => {
   border-radius: 10px;
   max-width: 500px;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 .score-board {
