@@ -8,7 +8,7 @@ const newMessage = ref('');
 const messagesContainer = ref(null);
 const isLoading = ref(false);
 const slothState = ref('default'); // États possibles: 'default', 'reflechis', 'reponse', 'surpris'
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://nuit-info-2025.onrender.com';
 
 // Modal de bienvenue
 const showWelcomeModal = ref(false);
