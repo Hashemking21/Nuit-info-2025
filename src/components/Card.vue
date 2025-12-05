@@ -65,7 +65,7 @@ const props = defineProps({
   flex-shrink: 0;
 }
 
-#text > h2 {
+#card h2 {
   border-radius: 5px;
   padding: 5px;
   display: flex;
@@ -73,7 +73,7 @@ const props = defineProps({
   align-items: flex-start;
 }
 
-#text > p {
+#card p {
   color: #000;
   font-family: "Space Grotesk";
   font-size: 18px;
@@ -83,6 +83,7 @@ const props = defineProps({
 }
 
 img {
+  object-fit: contain;
   width: 250px;
   height: 157px;
   aspect-ratio: 250/157;
