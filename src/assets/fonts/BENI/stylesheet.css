@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Beni';
+    src: url('BeniBlack.eot');
+    src: local('Beni Black'), local('BeniBlack'),
+        url('BeniBlack.eot?#iefix') format('embedded-opentype'),
+        url('BeniBlack.woff2') format('woff2'),
+        url('BeniBlack.woff') format('woff'),
+        url('BeniBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Beni';
+    src: url('BeniLight.eot');
+    src: local('Beni Light'), local('BeniLight'),
+        url('BeniLight.eot?#iefix') format('embedded-opentype'),
+        url('BeniLight.woff2') format('woff2'),
+        url('BeniLight.woff') format('woff'),
+        url('BeniLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Beni';
+    src: url('BeniBold.eot');
+    src: local('Beni Bold'), local('BeniBold'),
+        url('BeniBold.eot?#iefix') format('embedded-opentype'),
+        url('BeniBold.woff2') format('woff2'),
+        url('BeniBold.woff') format('woff'),
+        url('BeniBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Beni';
+    src: url('BeniRegular.eot');
+    src: local('Beni'), local('BeniRegular'),
+        url('BeniRegular.eot?#iefix') format('embedded-opentype'),
+        url('BeniRegular.woff2') format('woff2'),
+        url('BeniRegular.woff') format('woff'),
+        url('BeniRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
