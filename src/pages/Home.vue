@@ -27,18 +27,18 @@ import Card from '../components/Card.vue';
       <Card
         title="Inclusion"
         text="Accès équitable au numérique, réduction de la fracture numérique…"
-        image="/assets/inclusion.avif"
+        image="\src\imgLDPage\inclusion.avif"
         color="#E8F8FF" />
 
       <Card
         title="Responsabilité"
         text="Usage raisonné et réflexif de technologies souveraines et respectueuses des données personnelles…"
-        image="/assets/Responsabilité.avif"
+        image="\src\imgLDPage/responsability.avif"
         color="#b9ff66" />
       <Card
         title="Durabilité"
         text="Lutte contre l’obsolescence programmée par le choix de Linux pour l’équipement, maîtrise des coûts…"
-        image="/assets/Durabilité.avif"
+        image="\src\imgLDPage/durability.avif"
         color="#191A23" />
     </div>
 
