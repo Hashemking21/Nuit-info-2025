@@ -93,24 +93,24 @@ main {
 
 /* État par défaut - avec animation de respiration douce */
 .custom-card.sloth-default {
-  background-image: url('../assets/images/sleep.png');
+  background-image: url('../assets/images/sleep.webp');
   animation: breathe 4s ease-in-out infinite;
 }
 
 /* États d'interaction */
 .custom-card.sloth-reflechis {
-  background-image: url('../assets/images/réfléchis.png');
+  background-image: url('../assets/images/réfléchis.webp');
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 .custom-card.sloth-reponse {
-  background-image: url('../assets/images/reponse_trouvee.png');
+  background-image: url('../assets/images/reponse_trouvee.webp');
   animation: glow 1s ease-in-out;
   box-shadow: 0 0 30px rgba(139, 111, 71, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .custom-card.sloth-surpris {
-  background-image: url('../assets/images/surpris.png');
+  background-image: url('../assets/images/surpris.webp');
   animation: shake 0.5s ease-in-out;
 }
 
