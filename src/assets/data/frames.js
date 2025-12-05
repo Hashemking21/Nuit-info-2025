@@ -160,3 +160,43 @@ export const frames = [
     horribleInput: false,
   },
 ]
+
+export const framesStart =[
+  {
+    index: 0,
+    imgUrl: '',
+    text: '',
+    cmdList: ['cat'],
+    etatPlanete: 0,
+    etatPrison: 0,
+    etatSurveillance: 0,
+    horribleInput: false,
+  },{
+    index: 0,
+    imgUrl: '',
+    text: '',
+    cmdList: ['ls'],
+    etatPlanete: 0,
+    etatPrison: 0,
+    etatSurveillance: 0,
+    horribleInput: false,
+  }{
+    index: 0,
+    imgUrl: '',
+    text: '',
+    cmdList: ['cd sortir','ls'],
+    etatPlanete: 0,
+    etatPrison: 0,
+    etatSurveillance: 0,
+    horribleInput: false,
+  },{
+    index: 0,
+    imgUrl: '',
+    text: '',
+    cmdList: ['pillule rouge','pillule blue'],
+    etatPlanete: 0,
+    etatPrison: 0,
+    etatSurveillance: 0,
+    horribleInput: false,
+  }
+]
