@@ -103,6 +103,14 @@ import Card from '../components/Card.vue';
     margin-top: 10px;
     }
 
+  #text h2 {
+    font-size: 50px;
+  }
+
+  #text p {
+    font-size:20px;
+  }
+
 
     #about-us {
       display: flex;
@@ -110,15 +118,11 @@ import Card from '../components/Card.vue';
       align-items: center;
       margin-bottom: 50px;
       justify-content: space-evenly;
+      margin-left: 100px;
+      margin-right: 100px;
+      gap: 55px;
     }
 
-    #text {
-      width: 47%;
-    }
-
-    #img {
-      width: 47%;
-    }
 
     #img img {
       object-fit: contain;
