@@ -4,21 +4,40 @@ import TextDisplay from '../components/TextDisplay.vue'
 import EarthPanel from '@/components/EarthPanel.vue'
 import ImageMain from '@/components/ImageMain.vue'
 import Bars from '@/components/Bars.vue'
+import HorribleInput from '@/components/HorribleInput.vue'
+import SnakeGame from '@/pages/SnakeGame.vue'
+import { ref } from 'vue'
 import { useGameStepsStore } from '@/stores/game-steps.js'
 import { storeToRefs } from 'pinia'
 
-const gameStepsStore = useGameStepsStore();
-const step = storeToRefs(gameStepsStore).filledStep;
+const gameStepsStore = useGameStepsStore()
+const step = storeToRefs(gameStepsStore).filledStep
+const isSnakeOpen = ref(false)
 
 function executeCommand(cmd) {
   if (cmd === 'ls') {
-    gameStepsStore.enableLsDone();
+    if (step.value.index === 1) {
+      gameStepsStore.nextStepWhitoutLs()
+      return
+    }
+    gameStepsStore.enableLsDone()
+  } else if (cmd === 'ls -a') {
+    if (step.value.index >= 3) {
+      gameStepsStore.nextStep()
+      return
+    }
+    isSnakeOpen.value = true
+  } else if (cmd === 'cat') {
+    gameStepsStore.nextStepWhitoutLs()
+  } else if (cmd === 'pillule rouge') {
+    gameStepsStore.setPilluleRouge()
   } else {
-    gameStepsStore.nextStep();
+    gameStepsStore.nextStep()
   }
 }
 
 function onCommand(cmd) {
+  console.log(cmd)
   if (step.value.cmdList.includes(cmd)) {
     executeCommand(cmd)
   }
@@ -27,11 +46,16 @@ function onCommand(cmd) {
 
 <template>
   <main style="height: 100dvh">
-    <p>{{step}}</p>
-    <ImageMain class="imageName" :name="step.img" />
+    <div>
+      <ImageMain v-if="!isSnakeOpen && !step.horribleInput" class="imageName" :name="step.img" />
+      <SnakeGame v-if="isSnakeOpen" />
+      <div class="horrible-container">
+        <HorribleInput v-if="step.horribleInput" @update="onCommand($event)" />
+      </div>
+    </div>
     <TextDisplay class="textDisplay" :text="step.text" />
     <Terminal class="terminal" @command="onCommand" />
-    <div class="data-wrapper">
+    <div v-if="step.etatPlanete !== 0" class="data-wrapper">
       <EarthPanel :index="step.etatPlanete" />
       <Bars :height1="step.etatPrison" :height2="step.etatSurveillance" />
     </div>
@@ -44,6 +68,11 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+}
+
+.horrible-container {
+  display: flex;
+  justify-content: center;
 }
 
 .textDisplay {
