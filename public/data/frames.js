@@ -38,7 +38,7 @@ horribleInput:false
 },
 {
 index: 4,
-imgUrl: img5,
+imgUrl: "img5",
 text: "Tux : \nAller, suis-moi, on va rejoindre la capitale. C'est ici que se trouvent tes prochains adversaires. D'abord, tu devras libérer la ville de l'extrême surveillance de IGuardProMax. Il assure la sécurité, certes, mais à un trop grand prix. On ne peut plus rien faire sans son accord. On n'est même pas maître de notre environnement. Regarde ! On arrive. \nVous pouvez aller vers : \n[chemin]",//explication apple
 cmdList:["cd chemin", "ls"],
 etatPlanete:"img planete",
