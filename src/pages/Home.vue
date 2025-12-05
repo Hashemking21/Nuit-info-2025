@@ -1,9 +1,21 @@
 <script setup lang="js">
-import EarthPanel from '@/components/EarthPanel.vue';
+
 </script>
 
 <template>
-  <EarthPanel :index="5"/>
+  <div>
+      <div>
+        <h2>Inclusion</h2>
+        <p>
+          Accès équitable au numérique, réduction de la fracture numérique…
+        </p>
+      </div>
+      <div>
+        <img src="" alt="">
+      </div>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
