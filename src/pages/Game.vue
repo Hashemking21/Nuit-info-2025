@@ -1,4 +1,5 @@
-<script setup lang="js"></script>
+<script setup lang="js">
+</script>
 
 <template>
   <div class="game-page">
@@ -13,6 +14,8 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 .game-page {
     display: flex;
     flex-direction: column;

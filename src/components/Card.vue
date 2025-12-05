@@ -31,7 +31,7 @@ const props = defineProps({
 
 <template>
   <div id="card" :style="{ background: props.color }">
-    <div>
+    <div id="left-div">
       <h2 :style="{background:props.bgTextColor}">{{ props.title }}</h2>
       <p :style="{color:props.textColor}">{{ props.text }}</p>
     </div>
@@ -55,27 +55,21 @@ const props = defineProps({
   box-shadow: 0 5px 0 0 #191A23;
 }
 
-#text {
-  display: flex;
-  width: 200px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 14px;
-  flex-shrink: 0;
+#left-div {
+  width: 250px;
 }
 
 #card h2 {
+  display: inline;
   border-radius: 5px;
   padding: 5px;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 #card p {
   color: #000;
-  font-family: "Space Grotesk";
+  font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -88,6 +82,4 @@ img {
   height: 157px;
   aspect-ratio: 250/157;
 }
-
-
 </style>
