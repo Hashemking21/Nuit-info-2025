@@ -14,9 +14,14 @@ import Card from '../components/Card.vue'
         Entrez dans un univers dirigé par de puissants ennemis qui enferment, surveillent à
         l’extrême et détruisent l’environnement pour rétablir l’harmonie.
       </p>
-      <router-link to="/game">
-        <button id="btnJeu">Jouer et sauver Nirdia</button>
-      </router-link>
+      <div id="buttons">
+        <router-link to="/game">
+          <button id="btnJeu">Jouer et sauver Nirdia</button>
+        </router-link>
+        <router-link to="/chatbot">
+          <button id="btnJeu">Parler au chatbot</button>
+        </router-link>
+      </div>
     </div>
     <img id="img" src="\src\imgLDPage\NIRD-logo.avif" alt="Logo NIRD" />
   </div>
@@ -50,11 +55,11 @@ import Card from '../components/Card.vue'
 
   <!-- ===================== FOOTER ===================== -->
   <footer id="footer">
-      <div id="footer-logo">
-        <img src="\src\imgLDPage\Tux-pixelated.avif" alt="Logo" />
-        <h2>NIRD QUEST</h2>
-      </div>
-      <p>© Copyright 2025 Nird Quest. Ce site est publié sous licence AGPLv3.</p>
+    <div id="footer-logo">
+      <img src="\src\imgLDPage\Tux-pixelated.avif" alt="Logo" />
+      <h2>NIRD QUEST</h2>
+    </div>
+    <p>© Copyright 2025 Nird Quest. Ce site est publié sous licence AGPLv3.</p>
   </footer>
   <!-- ================================================== -->
 </template>
@@ -81,6 +86,11 @@ import Card from '../components/Card.vue'
   height: 100px;
 }
 
+#navbar h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 #about-us {
   display: flex;
   justify-content: space-between;
@@ -97,8 +107,18 @@ import Card from '../components/Card.vue'
   width: 35vw;
 }
 
+#about-us #buttons {
+  flex-direction: row;
+  gap: 20px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
 #about-us h2 {
   font-size: 60px;
+  line-height: 1.1;
 }
 
 #about-us p {
@@ -116,6 +136,7 @@ import Card from '../components/Card.vue'
 }
 
 #piliers h2 {
+  font-size: 26px;
   background: #b0ff67;
   border-radius: 5px;
   padding: 5px;

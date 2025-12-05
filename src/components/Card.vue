@@ -65,6 +65,9 @@ const props = defineProps({
   padding: 5px;
   flex-direction: column;
   align-items: flex-start;
+  font-weight: bold;
+  margin-block: 20px;
+  font-size: 26px;
 }
 
 #card p {
@@ -74,6 +77,7 @@ const props = defineProps({
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-block: 18px;
 }
 
 img {
