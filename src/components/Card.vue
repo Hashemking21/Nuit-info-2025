@@ -17,15 +17,23 @@ const props = defineProps({
   color: {
     type: String,
     default: '#F3F3F3' // default background
+  },
+  bgTextColor:{
+    type:String,
+    default:'#FFFFFF'
+  },
+  textColor:{
+    type:String,
+    default:'#000000'
   }
 })
 </script>
 
-<template>    
+<template>
   <div id="card" :style="{ background: props.color }">
     <div>
       <h2>{{ props.title }}</h2>
-      <p>{{ props.text }}</p>
+      <p :style="{background:props.color,color:props.textColor}">{{ props.text }}</p>
     </div>
     <div>
       <img :src="props.image" alt="" />
@@ -70,6 +78,12 @@ const props = defineProps({
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+img {
+  width: 250px;
+  height: 157px;
+  aspect-ratio: 250/157;
 }
 
 
