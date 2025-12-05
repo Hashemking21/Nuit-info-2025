@@ -1,7 +1,7 @@
 export const frame = [
   {
 index: 5,
-imgUrl: img5,
+imgUrl: "img5",
 text: " ",//explication apple
 cmdList:["cd chemin", "ls"],
 etatPlanete:"img planete",
