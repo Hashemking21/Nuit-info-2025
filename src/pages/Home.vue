@@ -4,8 +4,8 @@ import Card from '../components/Card.vue';
 
 <template>
 <div id="navbar">
-        <img src="" alt="">
-        <h1></h1>
+        <img src="\src\imgLDPage\Tux-pixelated.avif" alt="">
+        <h1>NIRD QUEST</h1>
     </div>
     <div id="about-us">
         <div id="text">
@@ -16,10 +16,10 @@ import Card from '../components/Card.vue';
             </router-link>
         </div>
         <div id="img">
-            <img src="" alt="">
+            <img src="\src\imgLDPage\NIRD-logo.avif" alt="">
         </div>
     </div>
-    <h2>Les 3 pilliers de notre démarche</h2>
+    <h2 id="piliers" >Les 3 pilliers de notre démarche</h2>
 
     <div id="piliersSection">
 
@@ -61,6 +61,7 @@ import Card from '../components/Card.vue';
       </p>
     </div>
 
+    
     <!-- Menu -->
     <div class="footer-center">
       <a href="#">About us</a>
@@ -93,6 +94,25 @@ import Card from '../components/Card.vue';
 </template>
 
 <style scoped>
+#navbar {
+  max-height: 100px;
+  }
+
+  #navbar img {
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+    }
+
+  #piliers {
+      background: #b0ff67; 
+      border-radius: 5px; 
+      padding: 5px;
+      justify-self: center;
+      width: fit-content;
+      margin-top: 50px;
+    }
+
   #piliersSection {
     display: flex;
     flex-wrap: wrap;
@@ -127,6 +147,11 @@ import Card from '../components/Card.vue';
 
 .footer-left {
   max-width: 300px;
+}
+
+.footer-left :first-child {
+  height: min-content;
+
 }
 
 .footer-logo {
