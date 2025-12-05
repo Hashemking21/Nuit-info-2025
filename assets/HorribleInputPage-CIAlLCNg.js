@@ -1,0 +1,1 @@
+import{H as r}from"./HorribleInput-BPv1wMFn.js";import{e as t,h as o,j as a,F as s,o as n}from"./index-jDmhaFVX.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const i={__name:"HorribleInputPage",setup(p){return(l,e)=>(n(),t(s,null,[e[0]||(e[0]=o("p",null,"Test",-1)),a(r)],64))}};export{i as default};

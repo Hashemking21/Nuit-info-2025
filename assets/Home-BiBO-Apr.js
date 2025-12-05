@@ -1,0 +1,1 @@
+import{E as e}from"./EarthPanel-BYO3YSd9.js";import{c as o,o as r}from"./index-jDmhaFVX.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const s={__name:"Home",setup(t){return(a,c)=>(r(),o(e,{index:5}))}};export{s as default};
