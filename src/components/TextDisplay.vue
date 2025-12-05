@@ -31,7 +31,7 @@ const props = defineProps({
   /* look carte */
   background: #000; /* fond noir */
   color: #fff; /* texte blanc */
-  border-radius: 12px; /* coins arrondis */
+  border-radius: 40px; /* coins arrondis */
   border: 1px solid #555; /* contour léger */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* ombre pour l’effet carte */
 

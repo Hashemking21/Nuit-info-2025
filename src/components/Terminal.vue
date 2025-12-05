@@ -65,7 +65,8 @@ function focusInput() {
   max-height: 450px;
   overflow-y: scroll;
 
-  border-radius: 8px; /* arrondi des coins */
+  border-radius: 40px; /* arrondi des coins */
+  padding: 20px;
 }
 
 /* une ligne de terminal */
