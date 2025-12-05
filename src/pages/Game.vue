@@ -1,26 +1,39 @@
 <script setup lang="js">
-import { ref } from 'vue'
 import Terminal from '../components/Terminal.vue'
 import TextDisplay from '../components/TextDisplay.vue'
 import EarthPanel from '@/components/EarthPanel.vue'
 import ImageMain from '@/components/ImageMain.vue'
 import Bars from '@/components/Bars.vue'
+import { useGameStepsStore } from '@/stores/game-steps.js'
+import { storeToRefs } from 'pinia'
 
-const currentText = ref('')
+const gameStepsStore = useGameStepsStore();
+const step = storeToRefs(gameStepsStore).filledStep;
+
+function executeCommand(cmd) {
+  if (cmd === 'ls') {
+    gameStepsStore.enableLsDone();
+  } else {
+    gameStepsStore.nextStep();
+  }
+}
 
 function onCommand(cmd) {
-  currentText.value = cmd //  on remplace le contenu de la carte
+  if (step.value.cmdList.includes(cmd)) {
+    executeCommand(cmd)
+  }
 }
 </script>
 
 <template>
   <main style="height: 100dvh">
-    <ImageMain class="imageName" name="etape0" />
-    <TextDisplay class="textDisplay" :text="currentText" />
+    <p>{{step}}</p>
+    <ImageMain class="imageName" :name="step.img" />
+    <TextDisplay class="textDisplay" :text="step.text" />
     <Terminal class="terminal" @command="onCommand" />
     <div class="data-wrapper">
-      <EarthPanel :index="5" />
-      <Bars height1="80" height2="20" />
+      <EarthPanel :index="step.etatPlanete" />
+      <Bars :height1="step.etatPrison" :height2="step.etatSurveillance" />
     </div>
   </main>
 </template>
@@ -58,7 +71,7 @@ main {
   grid-column: 2;
   grid-row: 2;
   display: flex;
-  background-image: url('../fond/fond.png');
+  background-image: url('../../src/assets/fond/fond.png');
   background-size: cover;
   justify-content: space-around;
   align-items: center;

@@ -9,7 +9,7 @@ const props = defineProps({
   },
 })
 
-const imageSrc = computed(() => `/data/Terres/Terre_etat_${props.index}_trans.png`)
+const imageSrc = computed(() => `src/assets/data/Terres/Terre_etat_${props.index}_trans.png`)
 </script>
 
 <template>
@@ -48,7 +48,7 @@ const imageSrc = computed(() => `/data/Terres/Terre_etat_${props.index}_trans.pn
   border-radius: 10px; /* Coins arrondis */
   padding: 12px; /* Espace autour de l’image */
 
-  /* ombre pour que ça "flotte" 
+  /* ombre pour que ça "flotte"
   box-shadow: 0 4px 12px rgba(105, 206, 23, 0.4);*/
 
   /* optionnel : largeur max pour ressembler à une carte */

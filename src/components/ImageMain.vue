@@ -9,7 +9,7 @@ const { name } = defineProps({
 })
 
 const url = computed(() => {
-  return `../../public/imgStep/${name}.avif`
+  return `../../src/assets/imgStep/${name}.avif`
 })
 </script>
 
