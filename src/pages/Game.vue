@@ -32,7 +32,7 @@ function play(){
 </script>
 
 <template>
-  <main v-if="!isStarted" style="height: 100dvh">
+  <main v-if="!isStarted" style="height: 100dvh; width: 100dvw">
       <div class="game-page">
     <h1 class="title">NIRD QUEST</h1>
 
@@ -45,7 +45,7 @@ function play(){
     </div>
   </div>
   </main>
-  <main v-else style="height: 100dvh">
+  <main class="screen" v-if="isStarted" style="height: 100dvh">
     <p>{{step}}</p>
     <ImageMain class="imageName" :name="step.img" />
     <TextDisplay class="textDisplay" :text="step.text" />
@@ -58,7 +58,7 @@ function play(){
 </template>
 
 <style scoped>
-main {
+.screen {
   background-color: #fffefeff;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -106,7 +106,8 @@ main {
 }
 /* --- Page du menu --- */
 .game-page {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* place le titre en haut mais centré */
@@ -141,7 +142,7 @@ main {
   padding: 18px 0;
   border: 4px solid black;
   border-radius: 20px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(2px);
   font-size: 28px;
   font-weight: 600;

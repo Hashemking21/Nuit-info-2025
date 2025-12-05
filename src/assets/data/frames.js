@@ -161,7 +161,7 @@ export const frames = [
   },
 ]
 
-export const framesStart =[
+export const framesStart = [
   {
     index: 0,
     imgUrl: '',
@@ -171,7 +171,7 @@ export const framesStart =[
     etatPrison: 0,
     etatSurveillance: 0,
     horribleInput: false,
-  },{
+  }, {
     index: 0,
     imgUrl: '',
     text: '',
@@ -180,20 +180,20 @@ export const framesStart =[
     etatPrison: 0,
     etatSurveillance: 0,
     horribleInput: false,
-  }{
+  }, {
     index: 0,
     imgUrl: '',
     text: '',
-    cmdList: ['cd sortir','ls'],
+    cmdList: ['cd sortir', 'ls'],
     etatPlanete: 0,
     etatPrison: 0,
     etatSurveillance: 0,
     horribleInput: false,
-  },{
+  }, {
     index: 0,
     imgUrl: '',
     text: '',
-    cmdList: ['pillule rouge','pillule blue'],
+    cmdList: ['pillule rouge', 'pillule blue'],
     etatPlanete: 0,
     etatPrison: 0,
     etatSurveillance: 0,
