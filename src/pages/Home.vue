@@ -21,7 +21,14 @@ import Card from '../components/Card.vue';
 
     <div id="piliersSection">
         
-      <Card />
+      
+      <Card
+        title="Inclusion"
+        text="Accès équitable au numérique…"
+        image="/assets/inclusion.png"
+        color="#E8F8FF"
+/>
+
       <Card />
       <Card />
     </div>
