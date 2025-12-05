@@ -123,7 +123,7 @@ export const frames = [
     index: 12,
     imgUrl: 'etape16',
     text: 'Tux :\nLà, une prise, vite débranche-la !\nVous pouvez aller vers : \n[prise]',
-    cmcmdListd: ['ls', 'cd prise'],
+    cmdList: ['ls', 'cd prise'],
     etatPlanete: 5,
     etatPrison: 0,
     etatSurveillance: 0,
@@ -133,7 +133,7 @@ export const frames = [
     index: 13,
     imgUrl: 'etape16',
     text: 'Tux :\nAller, supprime-la vite !',
-    cmcmdListd: ['ls', 'rm prise'],
+    cmdList: ['ls', 'rm prise'],
     etatPlanete: 5,
     etatPrison: 0,
     etatSurveillance: 0,
@@ -161,7 +161,7 @@ export const frames = [
   },
 ]
 
-export const framesStart =[
+export const framesStart = [
   {
     index: 0,
     imgUrl: '',
@@ -171,7 +171,8 @@ export const framesStart =[
     etatPrison: 0,
     etatSurveillance: 0,
     horribleInput: false,
-  },{
+  },
+  {
     index: 0,
     imgUrl: '',
     text: '',
@@ -180,7 +181,8 @@ export const framesStart =[
     etatPrison: 0,
     etatSurveillance: 0,
     horribleInput: false,
-  }{
+  },
+  {
     index: 0,
     imgUrl: '',
     text: '',
@@ -189,7 +191,8 @@ export const framesStart =[
     etatPrison: 0,
     etatSurveillance: 0,
     horribleInput: false,
-  },{
+  },
+  {
     index: 0,
     imgUrl: '',
     text: '',
