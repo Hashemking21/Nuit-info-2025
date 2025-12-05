@@ -5,10 +5,10 @@
     <h1 class="title">NIRD QUEST</h1>
 
     <div class="buttons">
-      <button class="menu-btn">JOUER</button>
+      <button class="btn">JOUER</button>
 
       <router-link to="/">
-        <button class="menu-btn">SORTIR</button>
+        <button class="btn">SORTIR</button>
       </router-link>
     </div>
   </div>
@@ -51,7 +51,7 @@
 }
 
 /* --- Style des boutons --- */
-.menu-btn {
+.btn {
   width: 200px;
   padding: 18px 0;
   border: 4px solid black;
