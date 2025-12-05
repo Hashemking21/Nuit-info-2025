@@ -1,102 +1,108 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue'
 
-const emit = defineEmits(['update']);
+const emit = defineEmits(['update'])
 
 // Refs DOM
-const alphabetContainer = ref(null);
-const secretInput = ref(null);
-const letterRange = ref(null);
+const alphabetContainer = ref(null)
+const secretInput = ref(null)
+const letterRange = ref(null)
 
 // State
-const currentIndex = ref(0);
-let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ← !#@?%$".split("");
+const currentIndex = ref(0)
+let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ← !#@?%$'.split('')
 
 // Fonts aléatoires
 const fonts = [
-  "Arial", "Courier New", "Georgia", "Times New Roman", "Verdana",
-  "Comic Sans MS", "Impact", "Trebuchet MS", "Monospace", "Serif"
-];
+  'Arial',
+  'Courier New',
+  'Georgia',
+  'Times New Roman',
+  'Verdana',
+  'Comic Sans MS',
+  'Impact',
+  'Trebuchet MS',
+  'Monospace',
+  'Serif',
+]
 
 // Fisher–Yates shuffle
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
   }
-  return array;
-};
+  return array
+}
 
 // Rendering de l'alphabet
 const renderAlphabet = (highlightIndex = Number(letterRange.value?.value)) => {
-  const container = alphabetContainer.value;
-  if (!container) return;
+  const container = alphabetContainer.value
+  if (!container) return
 
-  container.innerHTML = "";
+  container.innerHTML = ''
 
   alphabet.forEach((letter, i) => {
-    const div = document.createElement("div");
-    div.className = "letter";
-    div.textContent = letter;
+    const div = document.createElement('div')
+    div.className = 'letter'
+    div.textContent = letter
 
     // Chaos visuel
-    const randomRotate = Math.floor(Math.random() * 360);
-    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-    const randomWeight = Math.random() > 0.5 ? "bold" : "200";
-    const randomSize = 16 + Math.floor(Math.random() * 20);
-    const randomSkew = Math.floor(Math.random() * 60) - 30;
+    const randomRotate = Math.floor(Math.random() * 360)
+    const randomFont = fonts[Math.floor(Math.random() * fonts.length)]
+    const randomWeight = Math.random() > 0.5 ? 'bold' : '200'
+    const randomSize = 16 + Math.floor(Math.random() * 20)
+    const randomSkew = Math.floor(Math.random() * 60) - 30
 
-    let transformString = `rotate(${randomRotate}deg) skew(${randomSkew}deg)`;
+    let transformString = `rotate(${randomRotate}deg) skew(${randomSkew}deg)`
     if (i === highlightIndex) {
-      div.classList.add("highlight");
-      transformString += " scale(1.35)";
+      div.classList.add('highlight')
+      transformString += ' scale(1.35)'
     }
 
-    div.style.transform = transformString;
-    div.style.fontFamily = randomFont;
-    div.style.fontWeight = randomWeight;
-    div.style.fontSize = `${randomSize}px`;
+    div.style.transform = transformString
+    div.style.fontFamily = randomFont
+    div.style.fontWeight = randomWeight
+    div.style.fontSize = `${randomSize}px`
 
-    container.appendChild(div);
-  });
-};
+    container.appendChild(div)
+  })
+}
 
 // Slider change
 const onSliderInput = () => {
-  currentIndex.value = Number(letterRange.value.value);
-  renderAlphabet();
-};
+  currentIndex.value = Number(letterRange.value.value)
+  renderAlphabet()
+}
 
 // Bouton confirmation
 const onConfirm = () => {
-  const index = Number(letterRange.value.value);
-  const chosenLetter = alphabet[index];
-  const input = secretInput.value;
+  const index = Number(letterRange.value.value)
+  const chosenLetter = alphabet[index]
+  const input = secretInput.value
 
-  if (!input) return;
+  if (!input) return
 
-  if (chosenLetter === "←") {
-    input.value = input.value.slice(0, -1);
+  if (chosenLetter === '←') {
+    input.value = input.value.slice(0, -1)
   } else {
-    input.value += chosenLetter;
+    input.value += chosenLetter
   }
 
-  alphabet = shuffle(alphabet);
-  renderAlphabet();
-};
+  alphabet = shuffle(alphabet)
+  renderAlphabet()
+}
 
 // Init
 onMounted(() => {
   if (letterRange.value) {
-    letterRange.value.max = alphabet.length - 1;
+    letterRange.value.max = alphabet.length - 1
   }
-  renderAlphabet();
-});
+  renderAlphabet()
+})
 </script>
 
 <template>
-  <p>Horrible Input Component</p>
-
   <div id="secret-container">
     <div id="alphabet" ref="alphabetContainer"></div>
 
@@ -118,23 +124,25 @@ onMounted(() => {
     </div>
 
     <div class="btn-container">
-        <button id="confirmBtn" @click="onConfirm">Confirm Letter</button>
-   <button id="validateBtn" @click="emit('update',secretInput)" >Validate</button>
+      <button id="confirmBtn" @click="onConfirm">Confirm Letter</button>
+      <button id="validateBtn" @click="emit('update', secretInput.value)">Validate</button>
     </div>
   </div>
 </template>
 
 <style scoped>
 #secret-container {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background: radial-gradient(circle at top, #1a1a1a, #000);
   border: 2px solid #333;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3), inset 0 0 20px rgba(255, 0, 0, 0.1);
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 0, 0, 0.1);
   border-radius: 8px;
   color: #eee;
   transition: filter 0.3s;
@@ -146,7 +154,6 @@ onMounted(() => {
   gap: 12px;
   margin-top: 12px;
 }
-
 
 #alphabet {
   display: flex;
@@ -168,7 +175,10 @@ onMounted(() => {
   border: 1px solid #222;
   user-select: none;
   display: inline-block;
-  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
   background: rgba(40, 40, 40, 0.9);
   color: #f2f2f2;
   text-shadow: 0 0 3px rgba(255, 0, 0, 0.5);
@@ -194,13 +204,13 @@ onMounted(() => {
   width: 100%;
 }
 
-#slider-zone input[type="range"] {
+#slider-zone input[type='range'] {
   width: 100%;
   appearance: none;
   background: transparent;
 }
 
-#slider-zone input[type="range"]::-webkit-slider-thumb {
+#slider-zone input[type='range']::-webkit-slider-thumb {
   appearance: none;
   width: 16px;
   height: 16px;
@@ -212,11 +222,11 @@ onMounted(() => {
   transform: translateY(-6px);
 }
 
-#slider-zone input[type="range"]::-webkit-slider-thumb:active {
+#slider-zone input[type='range']::-webkit-slider-thumb:active {
   cursor: grabbing;
 }
 
-#slider-zone input[type="range"]::-webkit-slider-runnable-track {
+#slider-zone input[type='range']::-webkit-slider-runnable-track {
   height: 4px;
   background: linear-gradient(90deg, #330000, #990000);
   border-radius: 3px;
@@ -239,7 +249,9 @@ onMounted(() => {
 
 #secretInput:focus {
   outline: none;
-  box-shadow: inset 0 0 16px rgba(255, 0, 0, 0.4), 0 0 12px red;
+  box-shadow:
+    inset 0 0 16px rgba(255, 0, 0, 0.4),
+    0 0 12px red;
 }
 
 /* Bouton confirm */
@@ -252,7 +264,10 @@ onMounted(() => {
   color: #eee;
   border-radius: 6px;
   text-shadow: 0 0 4px red;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 #confirmBtn:hover {
@@ -275,7 +290,10 @@ onMounted(() => {
   color: #eee;
   border-radius: 6px;
   text-shadow: 0 0 4px rgb(0, 255, 13);
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 #validateBtn:hover {
@@ -288,5 +306,4 @@ onMounted(() => {
   transform: translateY(1px);
   box-shadow: 0 0 5px rgb(0, 255, 0) inset;
 }
-
 </style>
