@@ -50,18 +50,9 @@ import Card from '../components/Card.vue';
   <div class="footer-container">
 
     <!-- Logo + Nom -->
-    <div class="footer-left">
-      <img src="" alt="Logo" class="footer-logo" />
+    <div id="footer-left">
+      <img src="\src\imgLDPage\Tux-pixelated.avif" alt="Logo"  />
       <h2>NIRD QUEST</h2>
-
-      <h3 class="contact-title">Contact us:</h3>
-
-      <p>Email: info@positivus.com</p>
-      <p>Phone: 555-567-8901</p>
-      <p>
-        Address: 1234 Main St<br />
-        Moonstone City, Stardust State 12345
-      </p>
     </div>
 
     
@@ -97,16 +88,28 @@ import Card from '../components/Card.vue';
 </template>
 
 <style scoped>
-#navbar {
+#navbar ,#footer-left  {
   max-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
   }
 
-  #navbar img {
+  #navbar img , #footer-left img {
     height: 50px;
     margin-left: 20px;
     margin-top: 10px;
     }
 
+
+    #about-us {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 50px;
+
+    }
   #piliers {
       background: #b0ff67; 
       border-radius: 5px; 
