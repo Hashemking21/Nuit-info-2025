@@ -88,6 +88,15 @@ import Card from '../components/Card.vue';
 </template>
 
 <style scoped>
+* {
+  font-family: Calibri, sans-serif;
+}
+
+#navbar{
+  transform: scale(2);
+  margin-top: 60px; 
+}
+
 #navbar ,#footer-left  {
   max-height: 100px;
   display: flex;
@@ -103,8 +112,9 @@ import Card from '../components/Card.vue';
     margin-top: 10px;
     }
 
+    
   #text h2 {
-    font-size: 50px;
+    font-size: 60px;
   }
 
   #text p {
@@ -116,16 +126,18 @@ import Card from '../components/Card.vue';
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin-bottom: 50px;
+      margin-bottom: 250px;
       justify-content: space-evenly;
-      margin-left: 100px;
-      margin-right: 100px;
-      gap: 55px;
+      margin-left: 250px;
+      margin-right: 250px;
+      gap: 300px;
     }
 
 
     #img img {
-      object-fit: contain;
+      object-fit: cover;
+      width:100%;
+      transform: scale(1.4);
     }
 
   #piliers {
@@ -142,7 +154,6 @@ import Card from '../components/Card.vue';
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    margin-top: 50px;
   }
 
   #btnJeu {
