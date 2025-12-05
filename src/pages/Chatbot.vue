@@ -188,7 +188,7 @@ const easterEggMessages = [
   "...tu m'as réveillé... bon, maintenant que je suis là... pose ta question...",
   "...encore un clic ?... tu aimes vraiment m'embêter...",
   "...je te vois... *clignement lent des yeux*...",
-    "...Vu comment tu me fatigues j'espère que je gagnerai le prix... *clignement lent des yeux*...",
+    "...Vu comment tu me fatigues j'espère que je gagnerai le... *clignement lent des yeux*...",
 ];
 
 let lastEasterEggIndex = -1;
@@ -231,27 +231,32 @@ const onSlothClick = () => {
 </script>
 
 <template>
-    <!-- Welcome Modal -->
     <WelcomeModal
         :show="showWelcomeModal"
         @close="closeWelcomeModal"
         @start="startExperience"
     />
 
-    <main class="flex items-center justify-center gap-5">
-        <div class="left-sloth flex">
-            <div @click="onSlothClick" class="card-sloth bg-black w-[410px] h-[679px] rounded-lg custom-card" :class="`sloth-${slothState}`">
-                <div class=" flex justify-end flex-col bottom-0 left-0 w-full p-6 text-white h-full pointer-events-none">
-                    <p class="text-sm leading-15 beni-regular  text-[120px] ms-8" style="margin: 0;">Morphée <br></br><span class="beni-light  text-[70px]">Zen-Master des serveurs</span></p>
-                    <div class="flex justify-start items-center gap-2">
-                        <img src="../assets/images/paw.png" class="w-6"></img>
-                        <p class="beni-light text-[30px]">Paresseux à trois doigts (Bradypus tridactylus), version numérique.</p></div>
+    <main class="flex flex-col lg:flex-row items-center justify-center gap-5 p-4 lg:p-0 min-h-screen">
+        <div class="left-sloth flex w-full lg:w-auto justify-center">
+            <div @click="onSlothClick" 
+                 class="card-sloth bg-black w-full max-w-[410px] lg:w-[410px] h-[400px] lg:h-[679px] rounded-lg custom-card" 
+                 :class="`sloth-${slothState}`">
+                <div class="flex justify-end flex-col bottom-0 left-0 w-full p-6 text-white h-full pointer-events-none">
+                    <p class="text-sm leading-15 beni-regular text-[60px] lg:text-[120px] ms-0 lg:ms-8" style="margin: 0;">
+                        Morphée <br>
+                        <span class="beni-light text-[35px] lg:text-[70px]">Zen-Master des serveurs</span>
+                    </p>
+                    <div class="flex justify-start items-center gap-2 mt-2 lg:mt-0">
+                        <img src="../assets/images/paw.png" class="w-6">
+                        <p class="beni-light text-[18px] lg:text-[30px]">Paresseux à trois doigts (Bradypus tridactylus), version numérique.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="right-chatbot flex">
-            <div class="chatbot-container poppins-regular bg-white w-[1000px] h-[735px] rounded-2xl flex flex-col">
-                <!-- Header -->
+        
+        <div class="right-chatbot flex w-full lg:w-auto justify-center">
+            <div class="chatbot-container poppins-regular bg-white w-full lg:w-[1000px] h-[600px] lg:h-[735px] rounded-2xl flex flex-col">
                 <div class="chatbot-header flex items-center justify-between p-4 border-b">
                     <button class="menu-btn p-2">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -265,7 +270,6 @@ const onSlothClick = () => {
                         <h2 class="text-xl font-semibold">Morphée Chatbot</h2>
                     </div>
 
-                    <!-- Audio Control -->
                     <button
                         @click="toggleMute"
                         class="audio-btn p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -282,18 +286,16 @@ const onSlothClick = () => {
                     </button>
                 </div>
 
-                <!-- Messages Area -->
-                <div ref="messagesContainer" class="messages-area flex-1 overflow-y-auto p-6 space-y-4">
+                <div ref="messagesContainer" class="messages-area flex-1 overflow-y-auto p-4 lg:p-6 space-y-4">
                     <div v-for="message in messages" :key="message.id"
                          class="message-wrapper"
                          :class="message.sender === 'user' ? 'flex justify-end' : 'flex justify-start'">
-                        <div class="message-bubble max-w-[70%] px-5 py-3 rounded-2xl"
+                        <div class="message-bubble max-w-[85%] lg:max-w-[70%] px-4 py-2 lg:px-5 lg:py-3 rounded-2xl"
                              :class="message.sender === 'user' ? 'bg-brown-600 text-white user-message' : 'bg-gray-100 text-gray-800 bot-message'">
                             <p class="text-sm leading-relaxed">{{ message.text }}</p>
                         </div>
                     </div>
 
-                    <!-- Typing Indicator -->
                     <div v-if="isLoading" class="message-wrapper flex justify-start">
                         <div class="typing-indicator">
                             <span></span>
@@ -303,9 +305,8 @@ const onSlothClick = () => {
                     </div>
                 </div>
 
-                <!-- Input Area -->
-                <div class="input-area p-4 border-t">
-                    <form @submit.prevent="sendMessage" class="flex items-center gap-3">
+                <div class="input-area p-4">
+                    <form @submit.prevent="sendMessage" class="flex items-center gap-2 lg:gap-3">
                         <input
                             v-model="newMessage"
                             type="text"

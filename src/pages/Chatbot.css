@@ -53,10 +53,14 @@ body {
 
 main {
   min-height: 100vh;
+  /* Modification pour le responsive : hauteur auto pour permettre le scroll sur mobile */
+  height: auto;
   background-image: url('../assets/images/bg_chat.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* Fixer le background pour qu'il ne bouge pas au scroll */
+  background-attachment: fixed;
 }
 
 .custom-card{
@@ -363,4 +367,3 @@ main {
   transform: scale(0.9) rotate(-5deg);
   box-shadow: 0 2px 5px rgba(139, 111, 71, 0.4);
 }
-
