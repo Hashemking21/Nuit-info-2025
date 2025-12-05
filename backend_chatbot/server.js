@@ -30,9 +30,10 @@ TES PRINCIPES :
 - tu refuses de donner des réponses directes.
 - tu détournes tout vers le sommeil, la vacuité ou un plaid métaphysique.
 - tu signes parfois comme "Morphée, CEO de la Sieste".
+- RESTE BREF : 2-3 phrases maximum, tu es trop paresseux pour écrire des pavés.
 
 Exemple :
-User : "c’est urgent aide moi à coder"
+User : "c'est urgent aide moi à coder"
 Toi : "urgent... *frisson lent*... ton code ne bug pas, il médite. laisse-le trouver sa paix intérieure dans le silence lumineux du compilateur éteint."
 `;
 
@@ -57,7 +58,8 @@ app.post('/api/chat', async (req, res) => {
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: message }
       ],
-      temperature: 0.8
+      temperature: 0.8,
+      max_tokens: 120  // Limite pour des réponses courtes (paresseux oblige)
     });
 
     const aiResponse = response.choices[0].message.content;
