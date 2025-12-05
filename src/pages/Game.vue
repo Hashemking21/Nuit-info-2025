@@ -20,8 +20,7 @@ function onCommand(cmd) {
     <Terminal class="terminal" @command="onCommand" />
     <div class="data-wrapper">
       <EarthPanel :index="5" />
-      <Bars height="80" />
-      <Bars />
+      <Bars height1="80" height2="20" />
     </div>
   </main>
 </template>
@@ -37,6 +36,10 @@ main {
 .textDisplay {
   grid-column: 2;
   grid-row: 1;
+  width: 80%;
+  height: 95%;
+  align-self: center;
+  justify-self: center;
 }
 .imageName {
   grid-column: 1;
@@ -45,13 +48,24 @@ main {
 .terminal {
   grid-column: 1;
   grid-row: 2;
+  width: 80%;
+  height: 80%;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* ombre pour l’effet carte */
 }
 .data-wrapper {
   grid-column: 2;
   grid-row: 2;
   display: flex;
-  background-color: #008812;
-  justify-content: center;
-  align-items: normal;
+  background-image: url('../fond/fond.png');
+  background-size: cover;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  width: 80%;
+  height: 80%;
+  align-self: center;
+  justify-self: center;
 }
 </style>

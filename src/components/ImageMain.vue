@@ -28,5 +28,7 @@ const url = computed(() => {
 img {
   width: 70%;
   aspect-ratio: 1;
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* ombre pour l’effet carte */
 }
 </style>
