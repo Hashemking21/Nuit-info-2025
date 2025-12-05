@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { frames } from '@/assets/data/frames.js'
 
 export const useGameStepsStore = defineStore('game-steps', () => {
-  const step = ref(0);
+  const step = ref(10);
   const lsDone = ref(true);
 
   const filledStep = computed(() => {

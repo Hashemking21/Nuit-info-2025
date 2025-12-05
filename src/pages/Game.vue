@@ -9,9 +9,14 @@ import SnakeGame from '@/pages/SnakeGame.vue'
 import { ref } from 'vue'
 import { useGameStepsStore } from '@/stores/game-steps.js'
 import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
+
 
 const gameStepsStore = useGameStepsStore()
 const step = storeToRefs(gameStepsStore).filledStep
+const apiUrl = "https://nuit-info-2025.onrender.com"
+
+const chatBotResponse = ref(`Gépété :\nBienvenue dans ma tour. Pose-moi tes questions et j'illuminerai ta lanterne.`)
 const isSnakeOpen = ref(false)
 
 function executeCommand(cmd) {
@@ -36,6 +41,19 @@ function executeCommand(cmd) {
   }
 }
 
+function onChatBotCall(cmd) {+
+  fetch(`${apiUrl}/api/chat`, {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application.json'
+    },
+    body: JSON.stringify({message: cmd})
+  })
+  .then((response)=> {
+    chatBotResponse.value = response
+  })
+}
+
 function onCommand(cmd) {
   console.log(cmd)
   if (step.value.cmdList.includes(cmd)) {
@@ -46,16 +64,11 @@ function onCommand(cmd) {
 
 <template>
   <main style="height: 100dvh">
-    <div>
-      <ImageMain v-if="!isSnakeOpen && !step.horribleInput" class="imageName" :name="step.img" />
-      <SnakeGame v-if="isSnakeOpen" />
-      <div class="horrible-container">
-        <HorribleInput v-if="step.horribleInput" @update="onCommand($event)" />
-      </div>
-    </div>
+    <p>{{ step }}</p>
+    <ImageMain class="imageName" :name="step.img" />
     <TextDisplay class="textDisplay" :text="step.text" />
     <Terminal class="terminal" @command="onCommand" />
-    <div v-if="step.etatPlanete !== 0" class="data-wrapper">
+    <div class="data-wrapper">
       <EarthPanel :index="step.etatPlanete" />
       <Bars :height1="step.etatPrison" :height2="step.etatSurveillance" />
     </div>
