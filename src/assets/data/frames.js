@@ -32,7 +32,7 @@ export const frames = [
   {
     index: 3,
     img: 'etape9',
-    text: "Le cookie à disparu.\nTux :\nBravo ! tu l'as eu. Ne t'en fait pas la ville n'est plus très loin, viens !\nVous pouvez aller vers : \n[chemin]",
+    text: "Le cookie a disparu.\nTux :\nBravo ! tu l'as eu. Ne t'en fait pas la ville n'est plus très loin, viens !\nVous pouvez aller vers : \n[chemin]",
     cmdList: ['cd chemin', 'ls'],
     etatPlanete: 2,
     etatPrison: 99,
