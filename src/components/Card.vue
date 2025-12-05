@@ -21,7 +21,6 @@ const props = defineProps({
 })
 </script>
 
-<<<<<<< HEAD
 <template>
     <div id="card">
         <div id="text">
@@ -33,18 +32,9 @@ const props = defineProps({
         <div>
             <img src="" alt="">
         </div>
-=======
-<template>    
-  <div id="card" :style="{ background: props.color }">
-    <div>
-      <h2>{{ props.title }}</h2>
-      <p>{{ props.text }}</p>
->>>>>>> ea5464d3873ba8370e9118b9d94f0c1e01b41b93
     </div>
-
     <div>
       <img :src="props.image" alt="" />
-        </div>
     </div>
 </template>
 
@@ -55,7 +45,6 @@ const props = defineProps({
   padding: 50px;
   justify-content: space-between;
   align-items: center;
-<<<<<<< HEAD
   align-self: stretch;
   border-radius: 45px;
   border: 1px solid var(--Dark, #191A23);
@@ -89,10 +78,4 @@ const props = defineProps({
 }
 
 
-=======
-  border-radius: 45px;
-  border: 1px solid var(--Dark, #191A23);
-  box-shadow: 0 5px 0 0 #191A23;
-}
->>>>>>> ea5464d3873ba8370e9118b9d94f0c1e01b41b93
 </style>

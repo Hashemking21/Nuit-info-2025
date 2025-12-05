@@ -14,23 +14,30 @@ import Card from '../components/Card.vue';
             <button>Jouer et sauver Nirdia</button>
         </div>
         <div id="img">
-            <img src="" alt="">    
+            <img src="" alt="">
         </div>
     </div>
     <h2>Les 3 pilliers de notre démarche</h2>
 
     <div id="piliersSection">
-        
-      
+
+
       <Card
         title="Inclusion"
-        text="Accès équitable au numérique…"
-        image="/assets/inclusion.png"
-        color="#E8F8FF"
-/>
+        text="Accès équitable au numérique, réduction de la fracture numérique…"
+        image="/assets/inclusion.avif"
+        color="#E8F8FF" />
 
-      <Card />
-      <Card />
+      <Card
+        title="Responsabilité"
+        text="Usage raisonné et réflexif de technologies souveraines et respectueuses des données personnelles…"
+        image="/assets/Responsabilité.avif"
+        color="#b9ff66" />
+      <Card
+        title="Durabilité"
+        text="Lutte contre l’obsolescence programmée par le choix de Linux pour l’équipement, maîtrise des coûts…"
+        image="/assets/Durabilité.avif"
+        color="#191A23" />
     </div>
 
 </template>
