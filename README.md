@@ -1,3 +1,13 @@
+# Defis
+ SOPRA STERIA MéRIGNAC : Le défi: L'ergonomie : simplifier pour mieux vivre.
+     - Pour acceder a Horrible Input il faut avencer dans le jeu jusqu'a arriver au personnage du Iguard Pro Max. 
+
+AUTOCUT - Le défi: Hidden Snake 
+    -  Dans le jeu , pages 1 & 2 dans la grotte ( tapez dans l’invite de commande ‘ls -a’ )
+
+VIVERIS : Le défi: Chat'bruti
+    -  Il y a un boutons pour acceder au chatbot.
+
 # NIRD-Quest
 
 This template should help get you started developing with Vue 3 in Vite.
