@@ -7,14 +7,20 @@ import Bars from '@/components/Bars.vue'
 import { useGameStepsStore } from '@/stores/game-steps.js'
 import { storeToRefs } from 'pinia'
 
-const gameStepsStore = useGameStepsStore();
-const step = storeToRefs(gameStepsStore).filledStep;
+const gameStepsStore = useGameStepsStore()
+const step = storeToRefs(gameStepsStore).filledStep
 
 function executeCommand(cmd) {
   if (cmd === 'ls') {
-    gameStepsStore.enableLsDone();
+    gameStepsStore.enableLsDone()
+  }
+  if (cmd == 'cat') {
+  }
+  if (cmd == 'pillule rouge') {
+  }
+  if (cmd == 'pillule bleu') {
   } else {
-    gameStepsStore.nextStep();
+    gameStepsStore.nextStep()
   }
 }
 
@@ -27,7 +33,7 @@ function onCommand(cmd) {
 
 <template>
   <main style="height: 100dvh">
-    <p>{{step}}</p>
+    <p>{{ step }}</p>
     <ImageMain class="imageName" :name="step.img" />
     <TextDisplay class="textDisplay" :text="step.text" />
     <Terminal class="terminal" @command="onCommand" />
